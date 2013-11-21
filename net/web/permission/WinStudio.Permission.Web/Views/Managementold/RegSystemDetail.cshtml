@@ -1,0 +1,23 @@
+﻿@model WinStudio.Permission.Models.RegSystem
+
+@{
+    ViewBag.Title = "系统信息";
+}
+
+<h2> @Model.ToString()</h2>
+
+<fieldset>
+    <legend>该系统下角色</legend>
+    @Html.Action("RegSystemRoleList")
+</fieldset>
+<fieldset>
+    <legend>该系统下用户</legend>
+    @Html.Action("RegSystemCustomerList")
+</fieldset>
+<fieldset>
+    <legend>该系统下功能</legend>
+    @Html.Action("RegSystemFunctionList")
+</fieldset>
+<p>
+    @Html.ActionLink("Back to List", "RegSystemList")
+</p>

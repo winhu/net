@@ -1,0 +1,9 @@
+<WinPermissionNodeConfigurations Area=" ">
+  <Roles />
+  <Functions>
+    <Function Name="个人资料" Code="Profile" ParentCode="" Display="True" Editable="False" Address="/Profile">
+      <Function Name="详细" Code="Profile.Details" ParentCode="Profile" Display="True" Editable="False" Address="/Profile/Details" />
+      <Function Name="编辑" Code="Profile.Edit" ParentCode="Profile" Display="True" Editable="False" Address="/Profile/Edit" />
+    </Function>
+  </Functions>
+</WinPermissionNodeConfigurations>

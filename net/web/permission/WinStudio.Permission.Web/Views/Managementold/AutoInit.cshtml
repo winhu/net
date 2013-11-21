@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "AutoInit";
+}
+<h2>AutoInit</h2>
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+@using (Html.BeginForm("PermissionAutoInitializer", "Management", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Function</legend>
+
+        <div class="editor-label">
+            系统列表
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("SubSystem", (SelectList)ViewBag.SubSystems, "--请选择系统--")
+        </div>
+        <div class="editor-label">
+            域名称
+        </div>
+        <div class="editor-field">
+            <input type="text" id="tbFunctionArea" name="FunctionArea" />
+        </div>
+
+        <div class="editor-label">
+            权限文件
+        </div>
+        <div class="editor-field">
+            <input type="file" id="filePermissionUploader" name="PermissionFile" accept="dll" />
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<script>
+    $(document).ready(function () {
+        $("#SubSystem").die().live("change", function () {
+            $("#tbFunctionArea").val($(this).val());
+        })
+    })
+
+</script>

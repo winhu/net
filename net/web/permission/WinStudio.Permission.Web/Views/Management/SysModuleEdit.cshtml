@@ -1,0 +1,80 @@
+﻿@model WinStudio.Permission.Models.SysModule
+
+@{
+    ViewBag.Title = "ModuleEdit";
+    Layout = null;
+}
+
+<h2>@(Model == null || Model.IsNewModel() ? "注册模块" : "编辑模块")</h2>
+
+@using (Html.BeginForm(new AjaxOptions() { OnSuccess = "RefreshNode" }))
+{
+    @Html.AntiForgeryToken()
+
+    <fieldset>
+        <legend>Module</legend>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Code)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Code)
+            @Html.ValidationMessageFor(model => model.Code)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Authority)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Authority)
+            @Html.ValidationMessageFor(model => model.Authority)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsUsing)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsUsing)
+            @Html.ValidationMessageFor(model => model.IsUsing)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Display)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Display)
+            @Html.ValidationMessageFor(model => model.Display)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Memo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Memo)
+            @Html.ValidationMessageFor(model => model.Memo)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Timestamp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Timestamp)
+            @Html.ValidationMessageFor(model => model.Timestamp)
+        </div>
+        @Html.HiddenFor(model => model.ID)
+
+        <p>
+            <input type="submit" value="Save" />@Html.ValidationSummary(true)
+        </p>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

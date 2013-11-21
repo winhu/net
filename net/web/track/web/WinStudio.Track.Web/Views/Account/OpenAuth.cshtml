@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+<form action="/Account/OpenAuth" method="post">
+
+    <input type="text" name="openid_identifier" value="https://www.google.com/accounts/o8/id" />
+    <input type="submit" value="submit" />
+</form>

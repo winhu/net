@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8F078F5D-4E92-4DFF-870E-6B5A6350178B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WinStudio.Permission.Common.Framework</RootNamespace>
+    <AssemblyName>WinStudio.Permission.Common.Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\..\..\ref\microsoft\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinStudio.ComResult, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\ref\winstudio\comresult\WinStudio.ComResult.dll</HintPath>
+    </Reference>
+    <Reference Include="WinStudio.HttpExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\ref\winstudio\extensions\WinStudio.HttpExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="WinStudio.MvcExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\ref\winstudio\mvc\WinStudio.MvcExtensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\AbstractPermissionBusiService.cs" />
+    <Compile Include="Abstract\AbstractPermissionMvcController.cs" />
+    <Compile Include="Attributes\NeedHandleExceptionAttribute.cs" />
+    <Compile Include="Attributes\NeedPermissionAdminAttribute.cs" />
+    <Compile Include="Attributes\NeedPermissionAttribute.cs" />
+    <Compile Include="Attributes\NeedSysConfigAttribute.cs" />
+    <Compile Include="PermissionConsts.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\framework\WinStudio.Framework.Authentication\WinStudio.Framework.Authentication.csproj">
+      <Project>{8dcb0902-b7c7-44bc-99a7-f0b69158e9e4}</Project>
+      <Name>WinStudio.Framework.Authentication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\framework\WinStudio.Framework.EFModels\WinStudio.Framework.EFModels.csproj">
+      <Project>{75cdced6-dec0-4f14-b9a8-dd4f1ed96942}</Project>
+      <Name>WinStudio.Framework.EFModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\framework\WinStudio.Framework.Web\WinStudio.Framework.Web.csproj">
+      <Project>{83a9641a-e4c1-4538-9162-6cc03a7cca23}</Project>
+      <Name>WinStudio.Framework.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinStudio.Permission.Models\WinStudio.Permission.Models.csproj">
+      <Project>{fea95ae7-4cd8-4b64-8f21-86706dc14ab7}</Project>
+      <Name>WinStudio.Permission.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinStudio.Permission.Principle.Mvc\WinStudio.Permission.Principle.Mvc.csproj">
+      <Project>{06ec2b04-c0f1-44df-854d-4748f8c48a3b}</Project>
+      <Name>WinStudio.Permission.Principle.Mvc</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

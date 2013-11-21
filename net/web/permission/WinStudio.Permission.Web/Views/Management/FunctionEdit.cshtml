@@ -1,0 +1,135 @@
+﻿@model WinStudio.Permission.Models.Function
+
+@{
+    ViewBag.Title = "FunctionEdit";
+    Layout = null;
+}
+
+<h2>FunctionEdit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Function</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ParentID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ParentID)
+            @Html.ValidationMessageFor(model => model.ParentID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SystemID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SystemID)
+            @Html.ValidationMessageFor(model => model.SystemID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Address)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Address)
+            @Html.ValidationMessageFor(model => model.Address)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Editable)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Editable)
+            @Html.ValidationMessageFor(model => model.Editable)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsUsing)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsUsing)
+            @Html.ValidationMessageFor(model => model.IsUsing)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Memo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Memo)
+            @Html.ValidationMessageFor(model => model.Memo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PID)
+            @Html.ValidationMessageFor(model => model.PID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RPID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RPID)
+            @Html.ValidationMessageFor(model => model.RPID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Display)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Display)
+            @Html.ValidationMessageFor(model => model.Display)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CreatedTime)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CreatedTime)
+            @Html.ValidationMessageFor(model => model.CreatedTime)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ValidMsg)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ValidMsg)
+            @Html.ValidationMessageFor(model => model.ValidMsg)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Deleted)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Deleted)
+            @Html.ValidationMessageFor(model => model.Deleted)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

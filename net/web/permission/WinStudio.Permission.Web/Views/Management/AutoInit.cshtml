@@ -1,0 +1,49 @@
+﻿@model WinStudio.Permission.Models.SysModule
+@{
+    ViewBag.Title = "AutoInit";
+    Layout = null;
+}
+<h2>初始化功能点</h2>
+@using (Html.BeginForm("DoAutoInit", "Management", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <fieldset>
+        <legend>Function</legend>
+
+        <div class="editor-label">
+            模块： @Html.DisplayFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+        </div>
+        <div class="editor-label">
+            域名称
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Code)
+        </div>
+
+        <div class="editor-label">
+            功能点文件
+        </div>
+        <div class="editor-field">
+            <input type="file" id="filePermissionUploader" name="PermissionFile" accept="dll" />
+        </div>
+        @Html.HiddenFor(model => model.ID)
+        @Html.HiddenFor(model => model.Code)
+        <p>
+            <input type="submit" value="Save" />
+            @Html.ValidationSummary(true)
+            提示：该操作将覆盖该模块下原有的权限点，并会移除原有的权限关系。
+        </p>
+    </fieldset>
+}
+
+<script>
+    $(document).ready(function () {
+        $("#SubSystem").die().live("change", function () {
+            $("#tbFunctionArea").val($(this).val());
+        })
+    })
+
+</script>

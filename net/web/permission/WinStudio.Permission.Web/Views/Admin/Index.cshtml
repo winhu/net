@@ -1,0 +1,67 @@
+﻿@model WinStudio.Permission.Models.SysConfig
+
+@{
+    ViewBag.Title = "权限系统配置";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>SysConfig</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UseWebConfig)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UseWebConfig)
+            @Html.ValidationMessageFor(model => model.UseWebConfig)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WebConfigConnectionName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WebConfigConnectionName)
+            @Html.ValidationMessageFor(model => model.WebConfigConnectionName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DbServer)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DbServer)
+            @Html.ValidationMessageFor(model => model.DbServer)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DbName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DbName)
+            @Html.ValidationMessageFor(model => model.DbName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DbUser)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DbUser)
+            @Html.ValidationMessageFor(model => model.DbUser)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DbPwd)
+        </div>
+        <div class="editor-field">
+            @Html.PasswordFor(model => model.DbPwd)
+            @Html.ValidationMessageFor(model => model.DbPwd)
+        </div>
+
+        <p>
+            <input type="submit" value="Submit" />
+        </p>
+    </fieldset>
+}

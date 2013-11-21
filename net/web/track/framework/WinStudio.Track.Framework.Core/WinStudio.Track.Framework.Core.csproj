@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{94CEA1D8-2D75-410C-8140-B97A74B52B15}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WinStudio.Track.Framework.Core</RootNamespace>
+    <AssemblyName>WinStudio.Track.Framework.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\ref\microsoft\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinStudio.AssemblyUtility">
+      <HintPath>..\..\..\..\..\ref\winstudio\extensions\WinStudio.AssemblyUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="WinStudio.ComResult, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\ref\winstudio\comresult\WinStudio.ComResult.dll</HintPath>
+    </Reference>
+    <Reference Include="WinStudio.HttpExtensions">
+      <HintPath>..\..\..\..\..\ref\winstudio\extensions\WinStudio.HttpExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="WinStudio.StringExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\ref\winstudio\extensions\WinStudio.StringExtensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\AbstractTrackBusiService.cs" />
+    <Compile Include="Abstract\AbstractTrackApiController.cs" />
+    <Compile Include="Abstract\AbstractTrackController.cs" />
+    <Compile Include="Authentication\Api\AuthenticationHandler.cs" />
+    <Compile Include="Authentication\Api\Header.cs" />
+    <Compile Include="Authentication\Api\NeedSignInAttribute.cs" />
+    <Compile Include="Authentication\Mvc\NeedPermissionAttribute.cs" />
+    <Compile Include="Authentication\Mvc\NeedSignInAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SessionUser\TrackIdentifier.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\autofac\AutofacAutoResolver\AutofacAutoResolver.csproj">
+      <Project>{ddd9f53b-0e35-4db3-8392-5ffd725e96e5}</Project>
+      <Name>AutofacAutoResolver</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\mongo\WinStudio.MongoDB.IRepository\WinStudio.MongoDB.IRepository.csproj">
+      <Project>{ff23db31-ea90-4cd8-b88c-7b053ae2aaef}</Project>
+      <Name>WinStudio.MongoDB.IRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\mongo\WinStudio.MongoDB.Repository\WinStudio.MongoDB.Repository.csproj">
+      <Project>{5c3060eb-d99d-46f9-b7f0-ecd27ef26608}</Project>
+      <Name>WinStudio.MongoDB.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\framework\WinStudio.Framework.Authentication\WinStudio.Framework.Authentication.csproj">
+      <Project>{8dcb0902-b7c7-44bc-99a7-f0b69158e9e4}</Project>
+      <Name>WinStudio.Framework.Authentication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\framework\WinStudio.Framework.Web\WinStudio.Framework.Web.csproj">
+      <Project>{83a9641a-e4c1-4538-9162-6cc03a7cca23}</Project>
+      <Name>WinStudio.Framework.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\permission\WinStudio.Permission.Principle.Mvc\WinStudio.Permission.Principle.Mvc.csproj">
+      <Project>{06ec2b04-c0f1-44df-854d-4748f8c48a3b}</Project>
+      <Name>WinStudio.Permission.Principle.Mvc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\permission\WinStudio.Permission.Principle\WinStudio.Permission.Principle.csproj">
+      <Project>{9a295c91-6dd2-4306-a2ea-c907b82d8b83}</Project>
+      <Name>WinStudio.Permission.Principle</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\models\WinStudio.Track.Models.Authentication\WinStudio.Track.Models.Authentication.csproj">
+      <Project>{5096e63c-145d-4fd2-9b95-bbee343a6bb7}</Project>
+      <Name>WinStudio.Track.Models.Authentication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\models\WinStudio.Track.Models\WinStudio.Track.Models.csproj">
+      <Project>{9b4371dc-a4f7-431d-b1e9-cb39c7d52508}</Project>
+      <Name>WinStudio.Track.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

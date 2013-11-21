@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1B59281D-3901-42B5-AE12-17ACBF4A52FA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WinStudio.Track.CustomerBusiService</RootNamespace>
+    <AssemblyName>WinStudio.Track.CustomerBusiService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\..\..\..\..\..\ref\thirdparty\autofac\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mef">
+      <HintPath>..\..\..\..\..\..\ref\thirdparty\autofac\Autofac.Integration.Mef.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinStudio.ComResult">
+      <HintPath>..\..\..\..\..\..\ref\winstudio\comresult\WinStudio.ComResult.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomerBusiService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\mongo\WinStudio.MongoDB.IRepository\WinStudio.MongoDB.IRepository.csproj">
+      <Project>{ff23db31-ea90-4cd8-b88c-7b053ae2aaef}</Project>
+      <Name>WinStudio.MongoDB.IRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\mongo\WinStudio.MongoDB.Repository\WinStudio.MongoDB.Repository.csproj">
+      <Project>{5c3060eb-d99d-46f9-b7f0-ecd27ef26608}</Project>
+      <Name>WinStudio.MongoDB.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\framework\WinStudio.Track.Framework.Core\WinStudio.Track.Framework.Core.csproj">
+      <Project>{94cea1d8-2d75-410c-8140-b97a74b52b15}</Project>
+      <Name>WinStudio.Track.Framework.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\models\WinStudio.Track.Models\WinStudio.Track.Models.csproj">
+      <Project>{9b4371dc-a4f7-431d-b1e9-cb39c7d52508}</Project>
+      <Name>WinStudio.Track.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\interfaces\WinStudio.Track.IBusiService\WinStudio.Track.IBusiService.csproj">
+      <Project>{85ae9047-5ab9-4579-a782-59659d946e7c}</Project>
+      <Name>WinStudio.Track.IBusiService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

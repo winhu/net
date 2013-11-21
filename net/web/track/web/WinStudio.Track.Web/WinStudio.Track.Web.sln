@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinStudio.Track.Models", "..\..\models\WinStudio.Track.Models\WinStudio.Track.Models.csproj", "{9B4371DC-A4F7-431D-B1E9-CB39C7D52508}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinStudio.Track.Framework.Models", "..\..\framework\WinStudio.Track.Framework.Models\WinStudio.Track.Framework.Models.csproj", "{8DE2EEDB-A2D7-4DE7-88B3-72B2E838E3C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinStudio.Track.Models.DataInitializer", "..\..\models\WinStudio.Track.Models.DataInitializer\WinStudio.Track.Models.DataInitializer.csproj", "{5BF0A3DF-40DE-454E-9504-32D0A8EE9F55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinStudio.Track.Web", "WinStudio.Track.Web.csproj", "{2D57AFBF-54B7-493F-8FBF-A585642B8C9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinStudio.Track.Framework.Core", "..\..\framework\WinStudio.Track.Framework.Core\WinStudio.Track.Framework.Core.csproj", "{94CEA1D8-2D75-410C-8140-B97A74B52B15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinStudio.Track.Framework.Repository", "..\..\framework\WinStudio.Track.Framework.Repository\WinStudio.Track.Framework.Repository.csproj", "{8ECB374A-A4E2-454C-8F21-1B655E42B864}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "busiserv", "busiserv", "{08A593E0-254F-4F72-9C53-075EC9693332}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "user", "user", "{2B630D8B-B4CC-4C81-8A91-4E71B2F7FCEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinStudio.Track.IUserBusiService", "..\..\busiserv\user\WinStudio.Track.IUserBusiService\WinStudio.Track.IUserBusiService.csproj", "{15545986-AA3A-448C-8520-AB46A544A911}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinStudio.Track.UserBusiService", "..\..\busiserv\user\WinStudio.Track.UserBusiService\WinStudio.Track.UserBusiService.csproj", "{9D88994C-25E3-4C90-BA66-3167C5E8F01C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinStudio.Track.Web.Controllers", "..\WinStudio.Track.Web.Controllers\WinStudio.Track.Web.Controllers.csproj", "{C3894011-E624-4666-A510-E8CD2852D20D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinStudio.Track.Web.ApiControllers", "..\WinStudio.Track.Web.ApiControllers\WinStudio.Track.Web.ApiControllers.csproj", "{5072F897-2161-4410-9C91-18861B369664}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B4371DC-A4F7-431D-B1E9-CB39C7D52508}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B4371DC-A4F7-431D-B1E9-CB39C7D52508}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B4371DC-A4F7-431D-B1E9-CB39C7D52508}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B4371DC-A4F7-431D-B1E9-CB39C7D52508}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DE2EEDB-A2D7-4DE7-88B3-72B2E838E3C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DE2EEDB-A2D7-4DE7-88B3-72B2E838E3C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DE2EEDB-A2D7-4DE7-88B3-72B2E838E3C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DE2EEDB-A2D7-4DE7-88B3-72B2E838E3C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BF0A3DF-40DE-454E-9504-32D0A8EE9F55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BF0A3DF-40DE-454E-9504-32D0A8EE9F55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BF0A3DF-40DE-454E-9504-32D0A8EE9F55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BF0A3DF-40DE-454E-9504-32D0A8EE9F55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D57AFBF-54B7-493F-8FBF-A585642B8C9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D57AFBF-54B7-493F-8FBF-A585642B8C9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D57AFBF-54B7-493F-8FBF-A585642B8C9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D57AFBF-54B7-493F-8FBF-A585642B8C9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94CEA1D8-2D75-410C-8140-B97A74B52B15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94CEA1D8-2D75-410C-8140-B97A74B52B15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94CEA1D8-2D75-410C-8140-B97A74B52B15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94CEA1D8-2D75-410C-8140-B97A74B52B15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8ECB374A-A4E2-454C-8F21-1B655E42B864}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ECB374A-A4E2-454C-8F21-1B655E42B864}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ECB374A-A4E2-454C-8F21-1B655E42B864}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ECB374A-A4E2-454C-8F21-1B655E42B864}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15545986-AA3A-448C-8520-AB46A544A911}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15545986-AA3A-448C-8520-AB46A544A911}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15545986-AA3A-448C-8520-AB46A544A911}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15545986-AA3A-448C-8520-AB46A544A911}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D88994C-25E3-4C90-BA66-3167C5E8F01C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D88994C-25E3-4C90-BA66-3167C5E8F01C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D88994C-25E3-4C90-BA66-3167C5E8F01C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D88994C-25E3-4C90-BA66-3167C5E8F01C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3894011-E624-4666-A510-E8CD2852D20D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3894011-E624-4666-A510-E8CD2852D20D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3894011-E624-4666-A510-E8CD2852D20D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3894011-E624-4666-A510-E8CD2852D20D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5072F897-2161-4410-9C91-18861B369664}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5072F897-2161-4410-9C91-18861B369664}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5072F897-2161-4410-9C91-18861B369664}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5072F897-2161-4410-9C91-18861B369664}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2B630D8B-B4CC-4C81-8A91-4E71B2F7FCEB} = {08A593E0-254F-4F72-9C53-075EC9693332}
+		{15545986-AA3A-448C-8520-AB46A544A911} = {2B630D8B-B4CC-4C81-8A91-4E71B2F7FCEB}
+		{9D88994C-25E3-4C90-BA66-3167C5E8F01C} = {2B630D8B-B4CC-4C81-8A91-4E71B2F7FCEB}
+	EndGlobalSection
+EndGlobal

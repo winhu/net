@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "我的位置";
+}
+
+<script type="text/javascript"
+    src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDjzSnc2O5BZxFzpU4FGo9a_RroDCVoqXI&sensor=true">
+</script>
+<div id="map_canvas" style="width: 100%; min-height: 500px"></div>
+
+<script>
+    $(document).ready(function () {
+        initialize();
+    })
+    function initialize() {
+        var mapOptions = {
+            zoom: 12,
+            center: new google.maps.LatLng(39.92, 116.46),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        var map = new google.maps.Map(document.getElementById('map_canvas'),
+            mapOptions);
+
+        var marker = new google.maps.Marker({
+            position: map.getCenter(),
+            map: map,
+            title: 'Click to zoom'
+        });
+
+        google.maps.event.addListener(map, 'center_changed', function () {
+            // 3 seconds after the center of the map has changed, pan back to the
+            // marker.
+            window.setTimeout(function () {
+                map.panTo(marker.getPosition());
+            }, 3000);
+        });
+
+        google.maps.event.addListener(marker, 'click', function () {
+            map.setZoom(12);
+            map.setCenter(marker.getPosition());
+        });
+    }
+</script>

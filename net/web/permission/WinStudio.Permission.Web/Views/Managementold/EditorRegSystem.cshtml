@@ -1,0 +1,72 @@
+﻿@model WinStudio.Permission.Models.RegSystem
+
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    
+    <fieldset>
+        <legend>SubSystem</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Code)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Code)
+            @Html.ValidationMessageFor(model => model.Code)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Authority)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Authority)
+            @Html.ValidationMessageFor(model => model.Authority)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsUsing)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsUsing)
+            @Html.ValidationMessageFor(model => model.IsUsing)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Display)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Display)
+            @Html.ValidationMessageFor(model => model.Display)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Memo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Memo)
+            @Html.ValidationMessageFor(model => model.Memo)
+        </div>
+
+        @Html.HiddenFor(model => model.ID)
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "RegSystemList")
+</div>

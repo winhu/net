@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Index";
+    var friends = ViewBag.Friends;
+}
+
+<div>
+    @foreach (var friend in friends)
+    {
+        <div>@friend.Name
+        </div>
+    }
+</div>

@@ -1,0 +1,18 @@
+﻿@model WinStudio.Track.Web.Controllers.LoginModel
+@{
+    ViewBag.Title = "Login";
+}
+
+<fieldset>
+    <legend>站内用户登陆</legend>
+    <form method="post" action="/Account/Login">
+        <div>用户名:<input type="text" name="Username" id="tbUserName" /></div>
+        <div>密码:<input type="password" name="Password" id="tbPassword" /></div>
+        <input type="submit" value="登陆" />
+    </form>
+</fieldset>
+
+@*<fieldset>
+    <legend>公共账号登陆</legend>
+    @Html.Action("OpenAuth")
+</fieldset>*@

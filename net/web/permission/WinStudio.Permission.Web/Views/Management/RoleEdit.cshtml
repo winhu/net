@@ -1,0 +1,90 @@
+﻿@model WinStudio.Permission.Models.Role
+
+@{
+    ViewBag.Title = "RoleEdit";
+    Layout = null;
+}
+
+<h2>@(Model == null || Model.IsNewModel() ? "新建角色" : "编辑角色")</h2>
+
+@using (Html.BeginForm(new { mid = ViewBag.ModuleID }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Role</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Code)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Code)
+            @Html.ValidationMessageFor(model => model.Code)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BusiCode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BusiCode)
+            @Html.ValidationMessageFor(model => model.BusiCode)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Memo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Memo)
+            @Html.ValidationMessageFor(model => model.Memo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Display)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Display)
+            @Html.ValidationMessageFor(model => model.Display)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Editalbe)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Editalbe)
+            @Html.ValidationMessageFor(model => model.Editalbe)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsUsing)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsUsing)
+            @Html.ValidationMessageFor(model => model.IsUsing)
+        </div>
+
+        @Html.HiddenFor(model => model.ID)
+        @Html.HiddenFor(model => model.PID)
+        @Html.HiddenFor(model => model.ParentID)
+        @Html.HiddenFor(model => model.ModuleID)
+        <input type="hidden" name="ModuleID" value="@(ViewBag.ModuleID)" />
+
+
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

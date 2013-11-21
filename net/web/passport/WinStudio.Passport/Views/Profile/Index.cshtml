@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@if (HttpContext.Current.IsLogin())
+{
+    @Html.ActionLink("我的资料", "Details", new { account = HttpContext.Current.MyAccount() });
+}

@@ -1,0 +1,68 @@
+﻿@model WinStudio.Permission.Models.Customer
+
+@{
+    ViewBag.Title = "CustomerEdit";
+    Layout = null;
+}
+
+<h2>@(Model == null || Model.IsNewModel() ? "新建用户" : "编辑用户")</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <fieldset>
+        <legend>Customer</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Account)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Account)
+            @Html.ValidationMessageFor(model => model.Account)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsUsing)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsUsing)
+            @Html.ValidationMessageFor(model => model.IsUsing)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Display)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Display)
+            @Html.ValidationMessageFor(model => model.Display)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Memo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Memo)
+            @Html.ValidationMessageFor(model => model.Memo)
+        </div>
+
+
+        @Html.HiddenFor(model => model.ID)
+        @Html.HiddenFor(model => model.ModuleID)
+        <p>
+            <input type="submit" value="Save" />
+            @Html.ValidationSummary(true)
+        </p>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9D88994C-25E3-4C90-BA66-3167C5E8F01C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WinStudio.Track.UserBusiService</RootNamespace>
+    <AssemblyName>WinStudio.Track.UserBusiService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotNetOpenAuth">
+      <HintPath>..\..\..\..\..\..\ref\thirdparty\DotNetOpenAuth\v2.0\DotNetOpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common.Auto, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\ref\winstudio\ninject\Ninject.Web.Common.Auto.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinStudio.ComResult, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\ref\winstudio\comresult\WinStudio.ComResult.dll</HintPath>
+    </Reference>
+    <Reference Include="WinStudio.StringExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\ref\winstudio\extensions\WinStudio.StringExtensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="OpenIDBusiService.cs" />
+    <Compile Include="ProfileBusiService.cs" />
+    <Compile Include="SignBusiService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SignKeyBusiService.cs" />
+    <Compile Include="Utility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\framework\WinStudio.Track.Framework.Core\WinStudio.Track.Framework.Core.csproj">
+      <Project>{94cea1d8-2d75-410c-8140-b97a74b52b15}</Project>
+      <Name>WinStudio.Track.Framework.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\framework\WinStudio.Track.Framework.Models\WinStudio.Track.Framework.Models.csproj">
+      <Project>{8de2eedb-a2d7-4de7-88b3-72b2e838e3c7}</Project>
+      <Name>WinStudio.Track.Framework.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\framework\WinStudio.Track.Framework.Repository\WinStudio.Track.Framework.Repository.csproj">
+      <Project>{8ecb374a-a4e2-454c-8f21-1b655e42b864}</Project>
+      <Name>WinStudio.Track.Framework.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\models\WinStudio.Track.Models.Authentication\WinStudio.Track.Models.Authentication.csproj">
+      <Project>{5096e63c-145d-4fd2-9b95-bbee343a6bb7}</Project>
+      <Name>WinStudio.Track.Models.Authentication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinStudio.Track.IUserBusiService\WinStudio.Track.IUserBusiService.csproj">
+      <Project>{15545986-aa3a-448c-8520-ab46a544a911}</Project>
+      <Name>WinStudio.Track.IUserBusiService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,26 @@
+<WinPermissionNodeConfigurations Area="Card">
+  <Roles>
+    <Role Name="一卡通管理员" Code="Admin" Display="True" Editable="False" Address="" />
+    <Role Name="一卡通操作员" Code="CardOperator" Display="True" Editable="False" Address="" />
+    <Role Name="一卡通用户" Code="CardUser" Display="True" Editable="False" Address="" />
+  </Roles>
+  <Functions>
+    <Function Name="卡应用" Code="Main" ParentCode="" Display="True" Editable="False" Address="Card/Main">
+      <Function Name="一卡通首页" Code="Main.Index" ParentCode="Main" Display="True" Editable="False" Address="Card/Main/Index" />
+      <Function Name="一卡通子页" Code="Main.SubIndex" ParentCode="Main" Display="True" Editable="False" Address="Card/Main/SubIndex" />
+      <Function Name="通知" Code="Main.Notification" ParentCode="Main" Display="True" Editable="False" Address="Card/Main/Notification">
+        <Function Name="管理通知" Code="Manager.Notification" ParentCode="Main.Notification" Display="False" Editable="False" Address="Card/Manager/Notification" />
+      </Function>
+      <Function Name="是否可用" Code="Manager.IsCardCanbeUsed" ParentCode="Main" Display="True" Editable="False" Address="Card/Manager/IsCardCanbeUsed" />
+    </Function>
+    <Function Name="卡管理" Code="Manager" ParentCode="" Display="True" Editable="False" Address="Card/Manager">
+      <Function Name="首页" Code="Manager.Index" ParentCode="Manager" Display="True" Editable="False" Address="Card/Manager/Index" />
+      <Function Name="子卡" Code="Manager.SubIndex" ParentCode="Manager" Display="True" Editable="False" Address="Card/Manager/SubIndex">
+        <Function Name="更新" Code="Manager.Update" ParentCode="Manager.SubIndex" Display="True" Editable="False" Address="Card/Manager/Update">
+          <Function Name="删除" Code="Manager.Delete" ParentCode="Manager.Update" Display="True" Editable="False" Address="Card/Manager/Delete" />
+        </Function>
+      </Function>
+      <Function Name="可挂失" Code="Main.CanHangup" ParentCode="Manager" Display="True" Editable="False" Address="Card/Main/CanHangup" />
+    </Function>
+  </Functions>
+</WinPermissionNodeConfigurations>

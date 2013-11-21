@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div id="notification">notification</div>
+    <div>
+    </div>
+
+    <script>
+        if (typeof (EventSource) !== "undefined") {
+            // Yes! Server-sent events support!
+            // Some code.....
+        }
+        else {
+            // Sorry! No server-sent events support..
+            alert('Sorry! No server-sent events support.');
+        }
+        var source = new EventSource("/Home/Notification");
+        source.onmessage = function (event) {
+            console.log('got event:');
+            console.log('got event:' + event.data);
+            document.getElementById("notification").innerHTML += event.data;
+        };
+        source.onerror = function (event) { console.log(event); };
+        source.onopen = function (err) { console.log(err); }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+@*<script src="~/Scripts/thirdpart/ztree/js/jquery.ztree.all-3.5.min.js"></script>*@
+<link href="~/Scripts/thirdpart/ztree/css/demo.css" rel="stylesheet" />
+<link href="~/Scripts/thirdpart/ztree/css/zTreeStyle/zTreeStyle.css" rel="stylesheet" />
+@*<script src="~/Scripts/thirdpart/ztree/js/jquery.ztree.core-3.5.min.js"></script>*@
+<script src="~/Scripts/jquery-1.8.2.js"></script>
+@*<script src="~/Scripts/thirdpart/ztree/js/jquery-1.4.4.min.js"></script>*@
+<script src="~/Scripts/thirdpart/ztree/js/jquery.ztree.core-3.5.js"></script>
+<script src="~/Scripts/thirdpart/ztree/js/jquery.ztree.excheck-3.5.js"></script>
+<script src="~/Scripts/thirdpart/ztree/js/jquery.ztree.exedit-3.5.js"></script>
+<script src="~/Scripts/thirdpart/ztree/js/jquery.ztree.exhide-3.5.js"></script>
+<h2>Index</h2>
+
+@ViewBag.Exception
+<ul id="tree" class="ztree" style="width: 260px; overflow: auto;"></ul>
+
+
+<script>
+    var zTreeObj;
+
+    var setting = {
+        check: {
+            enable: true,
+            chkStyle: "checkbox",
+            nocheckInherit: true,
+            chkDisabledInherit: true
+
+        },
+        data: {
+            keep: {
+                leaf: true
+            },
+
+            simpleData: {
+                enable: true,
+                idKey: "id",
+                pIdKey: "pId",
+                rootPId: 0,
+                type: 0,
+                ptype: -1,
+                rpid: 0
+            }
+        },
+        async: {
+            enable: true,
+            url: "/Permission/GetPermissionNodes",
+            autoParam: ["rpid", "type", "ptype"]
+        },
+        callback: {
+            onClick: function () {
+                var nodes = zTreeObj.getSelectedNodes();
+                console.log(nodes);
+                console.log("aa");
+                if (nodes[0].children == undefined) {
+                    zTreeObj.expandNode(nodes[0], true, true, true);
+
+                    zTreeObj.reAsyncChildNodes(nodes[0], "refresh");
+                }
+            }
+        }
+
+    };
+    function zTreeOnClick(event, treeId, treeNode) {
+        console.log(treeNode);
+        alert(treeNode.tId + ", " + treeNode.name);
+    };
+
+
+
+    $(document).ready(function () {
+        $.fn.zTree.init($("#tree"), setting);
+        zTreeObj = $.fn.zTree.getZTreeObj("tree");
+
+    });
+
+
+</script>

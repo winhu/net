@@ -1,0 +1,43 @@
+
+.permissiontreeleft {
+    float:left;
+    width:300px;
+}
+.permissiontreeright {
+    width:650px;
+    margin-left:300px;
+}
+
+.ztree li span.button.rootnode_ico_open{
+    margin-right: 2px;
+    background: url(images/cog.png) no-repeat scroll 0 0 transparent;
+    vertical-align: top;
+    *vertical-align: middle;
+}.ztree li span.button.rootnode_ico_close{
+    margin-right: 2px;
+    background: url(images/cog.png) no-repeat scroll 0 0 transparent;
+    vertical-align: top;
+    *vertical-align: middle;
+}
+.ztree li span.button.pIcon01_ico_open {
+    margin-right: 2px;
+    background: url(../../../css/zTreeStyle/img/diy/1_open.png) no-repeat scroll 0 0 transparent;
+    vertical-align: top;
+    *vertical-align: middle;
+}
+
+.ztree li span.button.pIcon01_ico_close {
+    margin-right: 2px;
+    background: url(../../../css/zTreeStyle/img/diy/1_close.png) no-repeat scroll 0 0 transparent;
+    vertical-align: top;
+    *vertical-align: middle;
+}
+
+div#zTreeMenu {position:absolute; visibility:hidden; top:0; background-color: #555;text-align: left;padding: 2px;}
+div#zTreeMenu ul li{
+	margin: 1px 0;
+	padding: 0 5px;
+	cursor: pointer;
+	list-style: none outside none;
+	background-color: #DFDFDF;
+}

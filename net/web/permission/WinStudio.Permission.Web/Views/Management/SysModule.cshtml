@@ -1,0 +1,84 @@
+﻿@model IEnumerable<WinStudio.Permission.Models.SysModule>
+
+@{
+    ViewBag.Title = "SysModule";
+    Layout = null;
+}
+
+<h2>SysModule</h2>
+
+<p>
+    @Html.ActionLink("Create New", "SysModuleEdit")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Authority)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsUsing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Memo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Display)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedTime)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Authority)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsUsing)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Memo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Display)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedTime)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "SysModuleEdit", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID }) |
+                @Html.ActionLink("Roles", "Role", new { id = item.ID }) |
+                @Html.ActionLink("Customers", "Customer", new { id = item.ID }) |
+                @Html.ActionLink("Functions", "Function", new { id = item.ID })
+            </td>
+        </tr>
+@*<tr>
+            <td></td>
+            <td colspan="8">@Html.Action("Role", "Management", new { id = item.ID })
+            </td>
+        </tr>*@
+    }
+
+</table>

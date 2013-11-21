@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B03DC57A-9A9A-4AAF-9F58-A2CB962AAB15}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IntersoftWebApp2</RootNamespace>
+    <AssemblyName>IntersoftWebApp2</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UpgradeBackupLocation />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ISNet">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Intersoft Solutions\WebUI Studio for ASP.NET\WebUI.NET Framework 3.0\Bin\ISNet.dll</HintPath>
+    </Reference>
+    <Reference Include="ISNet.WebUI">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Intersoft Solutions\WebUI Studio for ASP.NET\WebUI.NET Framework 3.0\Bin\ISNet.WebUI.dll</HintPath>
+    </Reference>
+    <Reference Include="ISNet.WebUI.ISDataSource">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Intersoft Solutions\WebUI Studio for ASP.NET\ISDataSource.NET 1.0\Bin\ISNet.WebUI.ISDataSource.dll</HintPath>
+    </Reference>
+    <Reference Include="ISNet.Data.Linq">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Intersoft Solutions\WebUI Studio for ASP.NET\WebUI.NET Framework 3.0\Bin\ISNet.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="ISNet.WebUI.ISLinqDataSource">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Intersoft Solutions\WebUI Studio for ASP.NET\WebUI.NET Framework 3.0\Bin\v4\ISNet.WebUI.ISLinqDataSource.dll</HintPath>
+    </Reference>
+    <Reference Include="ISNet.WebUI.Silverlight">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Intersoft Solutions\WebUI Studio for ASP.NET\WebUI.NET Framework 3.0\Bin\ISNet.WebUI.Silverlight.dll</HintPath>
+    </Reference>
+    <Reference Include="ISNet.WebUI.Resources">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Intersoft Solutions\WebUI Studio for ASP.NET\WebUI.NET Framework 3.0\Bin\ISNet.WebUI.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="ISNet.WebUI.Silverlight.WebAqua">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Intersoft Solutions\WebUI Studio for ASP.NET\WebAqua.NET 2.0\Bin\ISNet.WebUI.Silverlight.WebAqua.dll</HintPath>
+    </Reference>
+    <Reference Include="ISNet.WebUI.WebAqua.Resources">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Intersoft Solutions\WebUI Studio for ASP.NET\WebAqua.NET 2.0\Bin\ISNet.WebUI.WebAqua.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="ISNet.WebUI.WebCombo">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Intersoft Solutions\WebUI Studio for ASP.NET\WebCombo.NET 6.0\Bin\ISNet.WebUI.WebCombo.dll</HintPath>
+    </Reference>
+    <Reference Include="ISNet.WebUI.WebCombo.Resources">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Intersoft Solutions\WebUI Studio for ASP.NET\WebCombo.NET 6.0\Bin\ISNet.WebUI.WebCombo.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="ISNet.WebUI.WebDesktop">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Intersoft Solutions\WebUI Studio for ASP.NET\WebDesktop.NET 4.0\Bin\ISNet.WebUI.WebDesktop.dll</HintPath>
+    </Reference>
+    <Reference Include="ISNet.WebUI.WebDesktop.Resources">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Intersoft Solutions\WebUI Studio for ASP.NET\WebDesktop.NET 4.0\Bin\ISNet.WebUI.WebDesktop.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="ISNet.WebUI.WebEssentials">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Intersoft Solutions\WebUI Studio for ASP.NET\WebEssentials.NET 2.0\Bin\ISNet.WebUI.WebEssentials.dll</HintPath>
+    </Reference>
+    <Reference Include="ISNet.WebUI.WebEssentials.Resources">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Intersoft Solutions\WebUI Studio for ASP.NET\WebEssentials.NET 2.0\Bin\ISNet.WebUI.WebEssentials.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="ISNet.WebUI.WebGrid">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Intersoft Solutions\WebUI Studio for ASP.NET\WebGrid.NET 8.0\Bin\ISNet.WebUI.WebGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="ISNet.WebUI.WebGrid.ISChartEngine">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Intersoft Solutions\WebUI Studio for ASP.NET\WebGrid.NET 8.0\Bin\ISNet.WebUI.WebGrid.ISChartEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="ISNet.WebUI.WebGrid.Resources">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Intersoft Solutions\WebUI Studio for ASP.NET\WebGrid.NET 8.0\Bin\ISNet.WebUI.WebGrid.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="ISNet.WebUI.WebInput">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Intersoft Solutions\WebUI Studio for ASP.NET\WebInput.NET 4.0\Bin\ISNet.WebUI.WebInput.dll</HintPath>
+    </Reference>
+    <Reference Include="ISNet.WebUI.WebInput.Resources">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Intersoft Solutions\WebUI Studio for ASP.NET\WebInput.NET 4.0\Bin\ISNet.WebUI.WebInput.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="ISNet.WebUI.WebScheduler">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Intersoft Solutions\WebUI Studio for ASP.NET\WebScheduler.NET 3.0\Bin\ISNet.WebUI.WebScheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="ISNet.WebUI.WebScheduler.Resources">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Intersoft Solutions\WebUI Studio for ASP.NET\WebScheduler.NET 3.0\Bin\ISNet.WebUI.WebScheduler.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="ISNet.WebUI.WebTextEditor">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Intersoft Solutions\WebUI Studio for ASP.NET\WebTextEditor.NET 1.0\Bin\ISNet.WebUI.WebTextEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="ISNet.WebUI.WebTextEditor.Resources">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Intersoft Solutions\WebUI Studio for ASP.NET\WebTextEditor.NET 1.0\Bin\ISNet.WebUI.WebTextEditor.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="ISNet.WebUI.WebTreeView">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Intersoft Solutions\WebUI Studio for ASP.NET\WebTreeView.NET 1.0\Bin\ISNet.WebUI.WebTreeView.dll</HintPath>
+    </Reference>
+    <Reference Include="ISNet.WebUI.WebTreeView.Resources">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Intersoft Solutions\WebUI Studio for ASP.NET\WebTreeView.NET 1.0\Bin\ISNet.WebUI.WebTreeView.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AddCustomers.aspx" />
+    <Content Include="AddEmployees.aspx" />
+    <Content Include="App_Data\Northwind.mdf" />
+    <Content Include="App_Data\Northwind_log.ldf">
+      <DependentUpon>Northwind.mdf</DependentUpon>
+    </Content>
+    <Content Include="Global.asax" />
+    <Content Include="Images\add.gif" />
+    <Content Include="Images\addToolBar.gif" />
+    <Content Include="Images\bg2.PNG" />
+    <Content Include="Images\bgDialog.PNG" />
+    <Content Include="Images\Customer-large.png" />
+    <Content Include="Images\customer.png" />
+    <Content Include="Images\data_operation.gif" />
+    <Content Include="Images\delete.gif" />
+    <Content Include="Images\EditExplorer.gif" />
+    <Content Include="Images\employee-large.png" />
+    <Content Include="Images\employee.png" />
+    <Content Include="Images\grdhead_bk.png" />
+    <Content Include="Images\header.png" />
+    <Content Include="Images\ISWndActive.gif" />
+    <Content Include="Images\ISWndNormal.gif" />
+    <Content Include="Images\LogOff-16.gif" />
+    <Content Include="Images\Save-16.gif" />
+    <Content Include="Images\SaveAndClose-16.gif" />
+    <Content Include="Images\supplier.gif" />
+    <Content Include="Images\view.gif" />
+    <Content Include="Scripts\Default.js" />
+    <Content Include="Styles\Default.css" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="WebForm1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddCustomers.aspx.cs">
+      <DependentUpon>AddCustomers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddCustomers.aspx.designer.cs">
+      <DependentUpon>AddCustomers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEmployees.aspx.cs">
+      <DependentUpon>AddEmployees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEmployees.aspx.designer.cs">
+      <DependentUpon>AddEmployees.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="northWind.cs">
+      <DependentUpon>northWind.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="northWind.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>northWind.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="northWind.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>northWind.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="northWind.dbml.layout">
+      <DependentUpon>northWind.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>14907</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:14907/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

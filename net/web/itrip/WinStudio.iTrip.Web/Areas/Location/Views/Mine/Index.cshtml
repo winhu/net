@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "我的位置";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript"
+    src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDjzSnc2O5BZxFzpU4FGo9a_RroDCVoqXI&sensor=true">
+</script>
+<div>
+    Longitude:<input type="text" id="tbMyLongitude" value="39.92" />
+    Latitude:<input type="text" id="tbMyLatitude" value="116.46" />
+    <input type="button" id="btnUpdateMyLocation" value="Update" />
+</div>
+<div id="map_canvas" style="width: 100%; min-height: 500px"></div>
+
+<script>
+    var map;
+    $(document).ready(function () {
+        initialize();
+        $("#btnUpdateMyLocation").die().live("click", function () {
+            $.get("/Location/Mine/Update",
+                { longitude: $("#tbMyLongitude").val(), latitude: $("#tbMyLatitude").val() },
+                function (data) {
+                    AddPoint($("#tbMyLatitude").val(), $("#tbMyLongitude").val());
+                });
+        });
+        alert('document ready');
+        var source = new EventSource("/Location/Notification/Subscribe");
+        source.onmessage = function (event) {
+            console.log(event.data);
+            console.log(new Date().toLocaleTimeString());
+            //document.getElementById("result").innerHTML += event.data + "<br />";
+        };
+        source.onopen = function (event) { console.log(event); };
+        source.onerror = function (event) { console.log(event); };
+    })
+
+    function AddPoint(lat, lng) {
+        palceMaker(new google.maps.LatLng(lng, lat));
+    }
+    function palceMaker(location) {
+        console.log(location);
+        var marker = new google.maps.Marker({
+            position: location,
+            map: map
+        });
+        map.setCenter(location);
+    }
+
+    function initialize() {
+        var mapOptions = {
+            zoom: 12,
+            center: new google.maps.LatLng(39.92, 116.46),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        map = new google.maps.Map(document.getElementById('map_canvas'),
+            mapOptions);
+
+        var marker = new google.maps.Marker({
+            position: map.getCenter(),
+            map: map,
+            title: 'Click to zoom'
+        });
+
+        google.maps.event.addListener(map, 'center_changed', function () {
+            // 3 seconds after the center of the map has changed, pan back to the
+            // marker.
+            //window.setTimeout(function () {
+            //    map.panTo(marker.getPosition());
+            //}, 3000);
+        });
+        google.maps.event.addListener(map, 'zoom_changed', function () {
+            //var zoomLevel = map.getZoom();
+            //map.setCenter(myLatLng);
+            //infowindow.setContent('Zoom: ' + zoomLevel);
+        });
+
+        google.maps.event.addListener(map, 'click', function (event) {
+            //map.setZoom(12);
+            console.log(event.LatLng);
+            //map.setCenter(marker.getPosition());
+            //palceMaker(event.LatLng);
+        });
+        var myLatLng = new google.maps.LatLng(39.92, 116.46);
+        var infowindow = new google.maps.InfoWindow({
+            content: 'Change the zoom level',
+            position: myLatLng
+        });
+        //infowindow.open(map);
+    }
+</script>

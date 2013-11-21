@@ -1,0 +1,1 @@
+D:\mine\src\nodejs\demo\MyDemo\bin\Debug\MyDemo.exe.config

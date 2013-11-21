@@ -1,0 +1,16 @@
+﻿<WinPermissionNodeConfigurations Area=" ">
+  <Roles />
+  <Functions>
+    <Function Name="个人资料" Code="Profile" ParentCode="" Display="True" Editable="False" Address="/Profile">
+      <Function Name="详细" Code="Profile.Details" ParentCode="Profile" Display="True" Editable="False" Address="/Profile/Details" />
+      <Function Name="编辑" Code="Profile.Edit" ParentCode="Profile" Display="True" Editable="False" Address="/Profile/Edit" />
+    </Function>
+    <Function Name="我的消息" Code="Message" ParentCode="" Display="True" Editable="False" Address="/Message">
+      <Function Name="我发送的消息" Code="Message.MySend" ParentCode="Message" Display="True" Editable="False" Address="/Message/MySend" />
+      <Function Name="我接收的消息" Code="Message.MyRece" ParentCode="Message" Display="True" Editable="False" Address="/Message/MyRece" />
+      <Function Name="我阅读过的消息" Code="Message.Read" ParentCode="Message.MyRece" Display="True" Editable="False" Address="/Message/Read" />
+      <Function Name="我删除的消息" Code="Message.Recycle" ParentCode="Message.Read" Display="True" Editable="False" Address="/Message/Recycle" />
+      <Function Name="编辑" Code="Message.Edit" ParentCode="Message" Display="True" Editable="False" Address="/Message/Edit" />
+    </Function>
+  </Functions>
+</WinPermissionNodeConfigurations>

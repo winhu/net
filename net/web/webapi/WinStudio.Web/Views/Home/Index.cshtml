@@ -1,0 +1,137 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<input type="text" id="tbWebApiUri" style="width: 300px" />
+<input type="button" id="btnTestWebApi" value="TestWebApi" />
+
+<form action="http://localhost:3198/api/Values/Str/aa" method="post">
+    <input name="value" value="" />
+    <input type="submit" value="submit" />
+
+</form>
+
+<fieldset>
+    <legend>api测试</legend>
+    <input type="text" id="tbapiid" style="width: 100px;" /><br />
+    <textarea id="tbapicontent" style="width: 200px"></textarea>
+    <br />
+    <input type="button" id="btnGetProducts" value="Gets" />
+    <input type="button" id="btnGetProduct" value="Get" />
+    <input type="button" id="btnPostProduct" value="Post" />
+    <input type="button" id="btnPutProduct" value="Put" />
+    <input type="button" id="btnDelProduct" value="Delete" />
+
+    <div id="divApiContent"></div>
+</fieldset>
+<script>
+    $(document).ready(function () {
+
+        var url = "/api/productapi/";
+        $("#btnDelProduct").die().live("click", function () {
+            $.ajax({
+                async: false,
+                url: url + $("#tbapiid").val(),
+                type: "delete",
+                dataType: 'json',
+                success: function (data) {
+                },
+                error: function () {
+                    alert('fail');
+                }
+            });
+        });
+        $("#btnPutProduct").die().live("click", function () {
+            var ta = JSON.parse($("#tbapicontent").val());
+
+            $.ajax({
+                async: false,
+                url: url + $("#tbapiid").val(),
+                data: ta,
+                type: "put",
+                dataType: 'json',
+                success: function (data) {
+                    $("#divApiContent").text(JSON.stringify(data));
+                },
+                error: function () {
+                    alert('fail');
+                }
+            });
+        });
+        $("#btnPostProduct").die().live("click", function () {
+            var ta = JSON.parse($("#tbapicontent").val());
+
+            $.ajax({
+                async: false,
+                url: url + $("#tbapiid").val(),
+                data: ta,
+                type: "post",
+                dataType: 'json',
+                success: function (data) {
+                    $("#divApiContent").text(JSON.stringify(data));
+                },
+                error: function () {
+                    alert('fail');
+                }
+            });
+        });
+        $("#btnGetProduct").die().live("click", function () {
+            $.ajax({
+                async: false,
+                url: url + $("#tbapiid").val(),
+                type: "Get",
+                dataType: 'jsonp',
+                success: function (data) {
+                    $("#divApiContent").text(JSON.stringify(data));
+                },
+                error: function () {
+                    alert('fail');
+                }
+            });
+        });
+        $("#btnGetProducts").die().live("click", function () {
+            $.ajax({
+                async: false,
+                url: url,
+                type: "Get",
+                dataType: 'jsonp',
+                success: function (data) {
+                    $("#divApiContent").text(JSON.stringify(data));
+                },
+                error: function () {
+                    alert('fail');
+                }
+            });
+        });
+
+
+        $("#btnTestWebApi").die().live("click", function () {
+            $.get($("#tbWebApiUri").val(), function (data) {
+                console.log(data);
+            });
+
+            //$.post($("#tbWebApiUri").val(), { "data": "testdata" }, function (data) { console.log(data) }, "jsonp")
+
+            $.ajax({
+                async: false,
+                url: $("#tbWebApiUri").val(),
+                //data: { data: "testdata" },
+                type: 'get',
+                dataType: 'jsonp',
+                success: function (data) {
+                    console.log('got it');
+                    console.log(data);
+                    console.log(JSON.stringify(data));
+                },
+                error: function (data, status) {
+                    console.log(data);
+                    console.log(status);
+                }
+            });
+        })
+    })
+
+</script>
