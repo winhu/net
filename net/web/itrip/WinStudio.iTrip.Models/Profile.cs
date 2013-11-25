@@ -13,5 +13,9 @@ namespace WinStudio.iTrip.Models
         public string Name { get; set; }
 
         public string Email { get; set; }
+
+        public Nationality Nationality { get; set; }
+
+        public NativePlace Native { get; set; }
     }
 }

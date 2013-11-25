@@ -33,9 +33,11 @@
     <Reference Include="AutofacAutoResolver, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\ref\framework\AutofacAutoResolver.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="MongoDB.Repository">
-      <HintPath>..\..\..\..\ref\thirdparty\mongo\MongoDB.Repository.dll</HintPath>
+      <HintPath>..\..\..\..\..\ref\framework\MongoDB.Repository.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,6 +49,7 @@
     <Reference Include="WinStudio.ComResult, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\ref\winstudio\WinStudio.ComResult.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -59,6 +62,7 @@
     <ProjectReference Include="..\WinStudio.iTrip.Models\WinStudio.iTrip.Models.csproj">
       <Project>{934fa89c-a98a-47a8-af68-f8da2e86bd72}</Project>
       <Name>WinStudio.iTrip.Models</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

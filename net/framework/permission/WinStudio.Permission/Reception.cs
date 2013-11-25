@@ -17,7 +17,7 @@ namespace WinStudio.Permission
         void RemoveCookie(HttpContextBase context);
 
         int GetLoginCount();
-        UserInfo GetUserInfo(HttpContextBase context);
+        UserInfo GetUserInfo(string token);
         List<UserInfo> GetLoginUserList();
     }
     public class Reception : IReception
@@ -32,6 +32,7 @@ namespace WinStudio.Permission
             var token = context.GetToken();
             _sessionManager.Expire(token);
             token = _sessionManager.Add(user.Id, user.Account, user.Name, user.Module, user.Host);
+            context.SaveToSession(token, GetUserInfo(token));
             SaveCookie(context, token);
             return token;
         }
@@ -73,9 +74,9 @@ namespace WinStudio.Permission
         }
 
 
-        public UserInfo GetUserInfo(HttpContextBase context)
+        public UserInfo GetUserInfo(string token)
         {
-            ISession session = _sessionManager.Get(context.GetToken());
+            ISession session = _sessionManager.Get(token);
             if (session == null) return null;
             return new UserInfo()
             {

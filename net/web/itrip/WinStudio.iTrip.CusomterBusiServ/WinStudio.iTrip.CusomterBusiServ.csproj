@@ -31,13 +31,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MongoDB.Bson">
-      <HintPath>..\..\..\..\ref\thirdparty\mongo\MongoDB.Bson.dll</HintPath>
+      <HintPath>..\..\..\..\..\ref\thirdparty\mongo\MongoDB.Bson.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="MongoDB.Driver">
-      <HintPath>..\..\..\..\ref\thirdparty\mongo\MongoDB.Driver.dll</HintPath>
+      <HintPath>..\..\..\..\..\ref\thirdparty\mongo\MongoDB.Driver.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="MongoDB.Repository">
-      <HintPath>..\..\..\..\ref\thirdparty\mongo\MongoDB.Repository.dll</HintPath>
+      <HintPath>..\..\..\..\..\ref\framework\MongoDB.Repository.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -48,7 +51,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="WinStudio.ComResult">
-      <HintPath>..\..\..\..\ref\winstudio\comresult\WinStudio.ComResult.dll</HintPath>
+      <HintPath>..\..\..\..\..\ref\winstudio\WinStudio.ComResult.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -59,14 +63,17 @@
     <ProjectReference Include="..\WinStudio.iTrip.Core\WinStudio.iTrip.Core.csproj">
       <Project>{bb88f23e-66f6-405d-b925-b637bbd18750}</Project>
       <Name>WinStudio.iTrip.Core</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\WinStudio.iTrip.IBusiness\WinStudio.iTrip.IBusiness.csproj">
       <Project>{32eab195-99a0-4f4d-ac9b-88eae844fa3e}</Project>
       <Name>WinStudio.iTrip.IBusiness</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\WinStudio.iTrip.Models\WinStudio.iTrip.Models.csproj">
       <Project>{934fa89c-a98a-47a8-af68-f8da2e86bd72}</Project>
       <Name>WinStudio.iTrip.Models</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

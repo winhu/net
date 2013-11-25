@@ -56,7 +56,7 @@ namespace WinStudio.iTrip.Core.AbstractServices
 
     public class iTripAccountController : iTripController
     {
-        public void CheckIn(Passport passport)
+        protected void CheckIn(Passport passport)
         {
             Profile profile = GetService<IProfileBusiness>().GetProfile(passport.Account);
             UserInfo user = new UserInfo() { Id = profile.Id, Account = profile.Account, Name = profile.Name };
@@ -65,6 +65,11 @@ namespace WinStudio.iTrip.Core.AbstractServices
             //var key = string.Format("{0}_{1}_{2}", profile.Account, DateTime.Now.ToString("yyyyMMddHHmmssffff"), profile.Id).ToMD5();
             //HttpContext.SaveCookie(Consts.CookieName, key, Consts.CookieDomain, Consts.CookieTimeout);
             //HttpContext.SaveToSession(key, profile);
+        }
+
+        protected void CheckOut()
+        {
+            WinWebGlobalManager.Reception.Logout(HttpContext);
         }
     }
 }

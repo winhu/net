@@ -40,7 +40,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="WinStudio.Permission">
-      <HintPath>..\..\..\..\ref\winstudio\permission\WinStudio.Permission.dll</HintPath>
+      <HintPath>..\..\..\..\..\ref\framework\WinStudio.Permission.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -54,6 +55,7 @@
     <ProjectReference Include="..\WinStudio.iTrip.Models\WinStudio.iTrip.Models.csproj">
       <Project>{934fa89c-a98a-47a8-af68-f8da2e86bd72}</Project>
       <Name>WinStudio.iTrip.Models</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

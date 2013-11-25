@@ -33,13 +33,13 @@ namespace WinStudio.Permission
             ISession session = Get(token);
             if (session != null) session.Expired();
         }
-
         public ISession Get(string token)
         {
             if (string.IsNullOrEmpty(token)) return null;
             Refresh();
             return _sessionList.SingleOrDefault(s => s.Token == token);
         }
+
 
         public bool IsExpired(string token)
         {

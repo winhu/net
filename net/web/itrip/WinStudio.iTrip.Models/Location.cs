@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WinStudio.iTrip.Models
 {
-    public class Location
+    public class Location : TripBaseEntity
     {
         public float Longitude { get; set; }
 

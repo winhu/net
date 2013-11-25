@@ -15,6 +15,8 @@ namespace WinStudio.iTrip.Models
             registration.RegisterType<Profile>().RegisterType<Passport>().RegisterType<Customer>();
             registration.RegisterType<ShortMessage>();
             registration.RegisterType<Location>();
+
+            registration.RegisterType<Nationality>().RegisterType<NativePlace>();
         }
     }
 }

@@ -34,6 +34,14 @@ namespace WinStudio.iTrip.Web
             MongoDBRepository.RegisterMongoDBContext(new iTripModelContext());
             MongoDBRepository.RegisterMongoIndex();
 
+            MongoEntity.RemoveAll<Nationality>();
+            MongoEntity.RemoveAll<NativePlace>();
+
+            var initializer = new Initializer();
+            var nations = initializer.InitializeNationality();
+            MongoEntity.InsertBatch<NativePlace>(initializer.InitializeNativePlace(nations[0]));
+            MongoEntity.InsertBatch<Nationality>(nations);
+
             Initialize();
         }
 

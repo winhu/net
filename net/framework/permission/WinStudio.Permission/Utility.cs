@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Xml;
 using System.Xml.Serialization;
+using WinStudio.Permission;
 
-namespace WinStudio.Permission
+namespace System.Web
 {
     public static class Utility
     {
@@ -20,6 +21,51 @@ namespace WinStudio.Permission
         public static string GetToken(this HttpContextBase context)
         {
             return context.GetToken(WinWebGlobalManager.Config.WinTokenName);
+        }
+        internal static UserInfo GetUserInfo(this HttpContextBase context)
+        {
+            var token = context.GetToken();
+            if (string.IsNullOrEmpty(token)) return null;
+            var user = context.GetFromSession<UserInfo>(token);
+            return user;
+        }
+        internal static bool IsLogin(this HttpContextBase context)
+        {
+            return null != context.GetUserInfo();
+        }
+        internal static string GetAccount(this HttpContextBase context)
+        {
+            var user = context.GetUserInfo();
+            if (user == null) return string.Empty;
+            return user.Account;
+        }
+        internal static string GetName(this HttpContextBase context)
+        {
+            var user = context.GetUserInfo();
+            if (user == null) return string.Empty;
+            return user.Name;
+        }
+        internal static string GetId(this HttpContextBase context)
+        {
+            var user = context.GetUserInfo();
+            if (user == null) return string.Empty;
+            return user.Id;
+        }
+        public static bool IsLogin(this HttpContext context)
+        {
+            return context.ToBase().IsLogin();
+        }
+        public static string MyAccount(this HttpContext context)
+        {
+            return context.ToBase().GetAccount();
+        }
+        public static string MyName(this HttpContext context)
+        {
+            return context.ToBase().GetName();
+        }
+        public static string MyId(this HttpContext context)
+        {
+            return context.ToBase().GetId();
         }
 
         /// <summary>

@@ -115,7 +115,7 @@ namespace WinStudio.iTrip.Web.Models
         }
         public Customer ToCustomer()
         {
-            return new Customer() { Account = UserName, NickName = NickName };
+            return new Customer() { Account = UserName, Name = NickName };
         }
     }
 

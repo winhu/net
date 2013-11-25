@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Mvc;
 
 namespace WinStudio.Permission
@@ -68,7 +69,7 @@ namespace WinStudio.Permission
             {
                 if (IsClient)
                     return WinWebGlobalManager.Guider.GetUserInfo(HttpContext);
-                else return WinWebGlobalManager.Reception.GetUserInfo(HttpContext);
+                else return WinWebGlobalManager.Reception.GetUserInfo(HttpContext.GetToken());
             }
         }
     }

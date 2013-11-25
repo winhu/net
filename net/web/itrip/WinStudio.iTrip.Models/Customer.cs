@@ -13,7 +13,7 @@ namespace WinStudio.iTrip.Models
 
         public string Account { get; set; }
 
-        public string NickName { get; set; }
+        public string Name { get; set; }
 
         public List<MongoDBRef> Friends { get; set; }
 

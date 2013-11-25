@@ -17,6 +17,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "business", "business", "{67
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinStudio.iTrip.Framework", "web\itrip\WinStudio.iTrip.Framework\WinStudio.iTrip.Framework.csproj", "{4E048050-79D1-494D-946F-4E8B000DFF4D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinStudio.iTrip.ICommonBusiness", "web\itrip\WinStudio.iTrip.ICommonBusiness\WinStudio.iTrip.ICommonBusiness.csproj", "{7CA48B07-DB0D-466A-BFA9-8E8BF41CF865}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinStudio.iTrip.CommonBusiServ", "web\itrip\WinStudio.iTrip.CommonBusiServ\WinStudio.iTrip.CommonBusiServ.csproj", "{A078BB1F-78A3-4240-BB66-C9250C113B2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{4E048050-79D1-494D-946F-4E8B000DFF4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E048050-79D1-494D-946F-4E8B000DFF4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E048050-79D1-494D-946F-4E8B000DFF4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CA48B07-DB0D-466A-BFA9-8E8BF41CF865}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CA48B07-DB0D-466A-BFA9-8E8BF41CF865}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CA48B07-DB0D-466A-BFA9-8E8BF41CF865}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CA48B07-DB0D-466A-BFA9-8E8BF41CF865}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A078BB1F-78A3-4240-BB66-C9250C113B2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A078BB1F-78A3-4240-BB66-C9250C113B2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A078BB1F-78A3-4240-BB66-C9250C113B2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A078BB1F-78A3-4240-BB66-C9250C113B2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,5 +71,7 @@ Global
 		{773A2A63-B476-4723-804B-B426BAB43FED} = {678EF646-6046-4326-8B31-803F5682157B}
 		{51EA7F48-E83F-48C4-813E-A4C343B7A899} = {678EF646-6046-4326-8B31-803F5682157B}
 		{32EAB195-99A0-4F4D-AC9B-88EAE844FA3E} = {678EF646-6046-4326-8B31-803F5682157B}
+		{7CA48B07-DB0D-466A-BFA9-8E8BF41CF865} = {678EF646-6046-4326-8B31-803F5682157B}
+		{A078BB1F-78A3-4240-BB66-C9250C113B2A} = {678EF646-6046-4326-8B31-803F5682157B}
 	EndGlobalSection
 EndGlobal

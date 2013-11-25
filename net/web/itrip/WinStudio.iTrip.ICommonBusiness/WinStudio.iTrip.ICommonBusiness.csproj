@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DDD9F53B-0E35-4DB3-8392-5FFD725E96E5}</ProjectGuid>
+    <ProjectGuid>{7CA48B07-DB0D-466A-BFA9-8E8BF41CF865}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AutofacAutoResolver</RootNamespace>
-    <AssemblyName>AutofacAutoResolver</AssemblyName>
+    <RootNamespace>WinStudio.iTrip.ICommonBusiness</RootNamespace>
+    <AssemblyName>WinStudio.iTrip.ICommonBusiness</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -24,29 +24,17 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\..\..\ref\framework\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac">
-      <HintPath>..\..\..\..\..\ref\thirdparty\autofac\Autofac.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Autofac.Integration.Mef">
-      <HintPath>..\..\..\..\..\ref\thirdparty\autofac\Autofac.Integration.Mef.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Autofac.Integration.Mvc">
-      <HintPath>..\..\..\..\..\ref\thirdparty\autofac\Autofac.Integration.Mvc.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="MongoDB.Repository">
+      <HintPath>..\..\..\..\..\ref\thirdparty\mongo\MongoDB.Repository.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,8 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutofacResolver.cs" />
+    <Compile Include="INationalityBusiness.cs" />
+    <Compile Include="INativePlaceBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WinStudio.iTrip.Models\WinStudio.iTrip.Models.csproj">
+      <Project>{934fa89c-a98a-47a8-af68-f8da2e86bd72}</Project>
+      <Name>WinStudio.iTrip.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
