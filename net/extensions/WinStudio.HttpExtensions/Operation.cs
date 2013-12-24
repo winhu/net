@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
 
@@ -11,6 +12,39 @@ namespace System.Web
 {
     public static class Operation
     {
+
+        /// <summary>
+        /// 获取当前用户的IP地址
+        /// </summary>
+        /// <returns></returns>
+        public static string GetIP(this HttpContextBase context)
+        {
+            // 穿过代理服务器取远程用户真实IP地址
+            string Ip = string.Empty;
+            if (context.Request.ServerVariables["HTTP_VIA"] != null)
+            {
+                if (context.Request.ServerVariables["HTTP_X_FORWARDED_FOR"] == null)
+                {
+                    if (context.Request.ServerVariables["HTTP_CLIENT_IP"] != null)
+                        Ip = context.Request.ServerVariables["HTTP_CLIENT_IP"].ToString();
+                    else
+                        if (context.Request.ServerVariables["REMOTE_ADDR"] != null)
+                            Ip = context.Request.ServerVariables["REMOTE_ADDR"].ToString();
+                }
+                else
+                    Ip = context.Request.ServerVariables["HTTP_X_FORWARDED_FOR"].ToString();
+            }
+            else if (context.Request.ServerVariables["REMOTE_ADDR"] != null)
+            {
+                Ip = context.Request.ServerVariables["REMOTE_ADDR"].ToString();
+            }
+
+            if (ip_reg.IsMatch(Ip))
+                return Ip;
+            else return "127.0.0.1";
+        }
+        private static Regex ip_reg = new Regex(@"^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])(\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])){3}$");
+
         /// <summary>
         /// convert HttpContext to HttpContextBase
         /// </summary>
@@ -264,6 +298,11 @@ namespace System.Web
             return context.Server.UrlDecode(token);
         }
 
+        public static string GetHeader(this HttpContextBase context, string name)
+        {
+            return context.Request.Headers[name];
+        }
+
         /// <summary>
         /// write image on page
         /// </summary>
@@ -302,6 +341,11 @@ namespace System.Web
         {
             return string.Format("{0}://{1}{2}", uri.Scheme, uri.Authority, uri.AbsolutePath);
         }
+
+        public static string GetUrlResource(this Uri uri)
+        {
+            return uri.OriginalString;
+        }
     }
 
     public class HttpHelper
@@ -317,9 +361,48 @@ namespace System.Web
         /// <returns></returns>
         public static string SendRequest(string url, string data, HttpCookieCollection cookies, string method = "POST", string encoding = "utf-8")
         {
+            return SendRequest(url, data, cookies.ToCookieContainer(), method, encoding);
+            //Encoding _encoding = Encoding.GetEncoding(encoding);
+            //HttpWebRequest Request = (HttpWebRequest)WebRequest.Create(url);
+            //Request.CookieContainer = cookies.ToCookieContainer();
+            //Request.Method = method;
+            //Request.ContentType = "application/x-www-form-urlencoded";
+            //Request.AllowAutoRedirect = true;
+            //if (!string.IsNullOrEmpty(data))
+            //{
+            //    byte[] postdata = _encoding.GetBytes(data);
+            //    using (Stream newStream = Request.GetRequestStream())
+            //    {
+            //        newStream.Write(postdata, 0, postdata.Length);
+            //    }
+            //}
+            //using (HttpWebResponse response = (HttpWebResponse)Request.GetResponse())
+            //{
+
+            //    using (Stream stream = response.GetResponseStream())
+            //    {
+            //        using (StreamReader reader = new StreamReader(stream, _encoding, true))
+            //        {
+            //            return reader.ReadToEnd();
+            //        }
+            //    }
+            //}
+        }
+
+        /// <summary>
+        /// send HttpWebRequest
+        /// </summary>
+        /// <param name="url">url</param>
+        /// <param name="data">data(k1=v1&k2=v2)</param>
+        /// <param name="cookiecontainer">CookieContainer</param>
+        /// <param name="method">POST or GET</param>
+        /// <param name="encoding">encoding(utf-8, gbk)</param>
+        /// <returns></returns>
+        public static string SendRequest(string url, string data, CookieContainer cookiecontainer, string method = "POST", string encoding = "utf-8")
+        {
             Encoding _encoding = Encoding.GetEncoding(encoding);
             HttpWebRequest Request = (HttpWebRequest)WebRequest.Create(url);
-            Request.CookieContainer = cookies.ToCookieContainer();
+            Request.CookieContainer = cookiecontainer;
             Request.Method = method;
             Request.ContentType = "application/x-www-form-urlencoded";
             Request.AllowAutoRedirect = true;
@@ -343,7 +426,6 @@ namespace System.Web
                 }
             }
         }
-
     }
 
 }

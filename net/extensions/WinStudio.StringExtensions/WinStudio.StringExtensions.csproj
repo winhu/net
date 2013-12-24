@@ -40,9 +40,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converter.cs" />
-    <Compile Include="Cryptogram.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Judgment.cs" />
     <Compile Include="Operation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

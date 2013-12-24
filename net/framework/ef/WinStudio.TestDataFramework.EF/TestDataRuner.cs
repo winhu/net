@@ -12,7 +12,7 @@ namespace WinStudio.TestDataFramework.EF
     {
         public virtual List<ITestDataInitializer<TDbContext>> GetTestDataInitializers()
         {
-            var types = Utility.GetAssembly<ITestDataInitializer<TDbContext>>().FindTypes<ITestDataInitializer<TDbContext>>();
+            var types = WinAssemblyUtility.GetAssembly<ITestDataInitializer<TDbContext>>().FindTypes<ITestDataInitializer<TDbContext>>();
             List<ITestDataInitializer<TDbContext>> lst = new List<ITestDataInitializer<TDbContext>>();
             foreach (Type type in types)
             {

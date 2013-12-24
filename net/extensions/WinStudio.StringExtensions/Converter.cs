@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace System
 {
@@ -107,12 +108,26 @@ namespace System
         /// <typeparam name="TEnum">Enum</typeparam>
         /// <param name="s">string</param>
         /// <returns></returns>
+        public static TEnum ToEnum<TEnum>(this string s, TEnum v) where TEnum : struct
+        {
+            if (!s.HasValue()) return default(TEnum);
+            EnumConverter convert = new EnumConverter(typeof(TEnum));
+            if (convert == null)
+                return v;
+
+            return (TEnum)convert.ConvertFromString(s);
+        }        /// <summary>
+        /// convert string to Enum
+        /// </summary>
+        /// <typeparam name="TEnum">Enum</typeparam>
+        /// <param name="s">string</param>
+        /// <returns></returns>
         public static TEnum ToEnum<TEnum>(this string s) where TEnum : struct
         {
             if (!s.HasValue()) return default(TEnum);
             EnumConverter convert = new EnumConverter(typeof(TEnum));
             if (convert == null)
-                throw new ApplicationException("canot find Enum Converter");
+                throw new Exception("Canot find EnumConverter");
 
             return (TEnum)convert.ConvertFromString(s);
         }
@@ -148,6 +163,24 @@ namespace System
             MemoryStream stream = new MemoryStream(byteArray);
             System.Xml.Serialization.XmlSerializer xs = new System.Xml.Serialization.XmlSerializer(typeof(TObject));
             return xs.Deserialize(stream) as TObject;
+        }
+
+        public static string ToXml(this object target, Encoding encoding)
+        {
+            if (target != null)
+            {
+                System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(target.GetType());
+                MemoryStream stream = new MemoryStream();
+                XmlTextWriter writer = new XmlTextWriter(stream, encoding);
+                x.Serialize(writer, target);
+                byte[] EncodedData = stream.GetBuffer();
+                return Encoding.UTF8.GetString(EncodedData, 0, (int)stream.Length);
+            }
+            else return string.Empty;
+        }
+        public static string ToXml(this object target)
+        {
+            return target.ToXml(Encoding.UTF8);
         }
 
         public static NameValueCollection ToNameValueCollection(this string s, string spliter = "=&")

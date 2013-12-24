@@ -43,5 +43,14 @@ namespace AutofacAutoResolver
             _container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(_container));
         }
+
+        private static IAutofacResolver _instance = new AutofacResolver();
+        public static IAutofacResolver Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
     }
 }
