@@ -13,7 +13,17 @@ namespace System.Reflection
         /// <summary>
         /// 获取当前集合所有包含指定类型名的程序集
         /// </summary>
-        /// <param name="typeName">指定类型名</param>
+        /// <param name="assemblyFullName">指定类型名</param>
+        /// <returns></returns>
+        public static Assembly[] GetAssembly(this Assembly[] assemblies, Type type)
+        {
+            return assemblies.GetAssembly(type.FullName);
+        }
+        /// <summary>
+        /// 获取当前集合所有包含指定名称的程序集
+        /// </summary>
+        /// <param name="assemblies"></param>
+        /// <param name="assemblyFullName">指定的程序集名称</param>
         /// <returns></returns>
         public static Assembly[] GetAssembly(this Assembly[] assemblies, string typeName)
         {
