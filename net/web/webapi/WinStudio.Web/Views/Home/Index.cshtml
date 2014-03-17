@@ -45,7 +45,9 @@
             });
         });
         $("#btnPutProduct").die().live("click", function () {
+            console.log($("#tbapicontent").val());
             var ta = JSON.parse($("#tbapicontent").val());
+            console.log(ta);
 
             $.ajax({
                 async: false,
@@ -99,6 +101,7 @@
                 type: "Get",
                 dataType: 'jsonp',
                 success: function (data) {
+                    console.log(data);
                     $("#divApiContent").text(JSON.stringify(data));
                 },
                 error: function () {

@@ -37,11 +37,11 @@ namespace System.Reflection
         /// 获取当前程序集内所有指定类型
         /// </summary>
         /// <param name="assembly">当前程序集</param>
-        /// <param name="typeName">指定类型</param>
+        /// <param name="typeFullName">指定类型</param>
         /// <returns></returns>
-        public static Type[] FindTypes(this Assembly assembly, string typeName)
+        public static Type[] FindTypes(this Assembly assembly, string typeFullName)
         {
-            return assembly.FindTypes(typeName);
+            return assembly.FindTypes(typeFullName);
         }
 
         /// <summary>
@@ -59,11 +59,11 @@ namespace System.Reflection
         /// 获取当前集合所有的制定类型
         /// </summary>
         /// <param name="assemblies">当前集合</param>
-        /// <param name="typeName">制定类型</param>
+        /// <param name="typeFullName">制定类型</param>
         /// <returns></returns>
-        public static Type[] FindTypes(this Assembly[] assemblies, string typeName)
+        public static Type[] FindTypes(this Assembly[] assemblies, string typeFullName)
         {
-            return assemblies.SelectMany(a => a.GetTypes().FindTypes(typeName)).ToArray();
+            return assemblies.SelectMany(a => a.GetTypes().FindTypes(typeFullName)).ToArray();
         }
 
         /// <summary>
@@ -93,22 +93,11 @@ namespace System.Reflection
         /// 获取当前集合所有使用了制定类型的类型
         /// </summary>
         /// <param name="types">当前集合</param>
-        /// <param name="typeName">制定类型</param>
+        /// <param name="typeFullName">制定类型</param>
         /// <returns></returns>
-        public static Type[] FindTypes(this Type[] types, string typeName)
+        public static Type[] FindTypes(this Type[] types, string typeFullName)
         {
-            return types.Where(t => t.IsSameOrInherited(typeName)).ToArray();
+            return types.Where(t => t.IsSameOrInherited(typeFullName)).ToArray();
         }
     }
-
-    //public class tester
-    //{
-    //    public void test()
-    //    {
-
-    //        var ass = Utility.GetAssembly("Synjones.Dreams.Plugins.Card");
-    //        var ret = ass.FindTypes<NeedWinPermissionAttribute>();
-    //        Console.WriteLine(ret.Length);
-    //    }
-    //}
 }

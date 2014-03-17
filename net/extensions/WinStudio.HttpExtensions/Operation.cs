@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -400,12 +401,28 @@ namespace System.Web
         /// <returns></returns>
         public static string SendRequest(string url, string data, CookieContainer cookiecontainer, string method = "POST", string encoding = "utf-8")
         {
+            return SendRequest(url, data, null, cookiecontainer, method, encoding);
+        }
+        /// <summary>
+        /// send HttpWebRequest
+        /// </summary>
+        /// <param name="url">url</param>
+        /// <param name="data">data(k1=v1&k2=v2)</param>
+        /// <param name="headers">header collection</param>
+        /// <param name="cookiecontainer">CookieContainer</param>
+        /// <param name="method">POST or GET</param>
+        /// <param name="encoding">encoding(utf-8, gbk)</param>
+        /// <returns></returns>
+        public static string SendRequest(string url, string data, NameValueCollection headers, CookieContainer cookiecontainer, string method = "POST", string encoding = "utf-8")
+        {
             Encoding _encoding = Encoding.GetEncoding(encoding);
             HttpWebRequest Request = (HttpWebRequest)WebRequest.Create(url);
             Request.CookieContainer = cookiecontainer;
             Request.Method = method;
             Request.ContentType = "application/x-www-form-urlencoded";
             Request.AllowAutoRedirect = true;
+            if (headers != null && headers.Count > 0)
+                Request.Headers.Add(headers);
             if (!string.IsNullOrEmpty(data))
             {
                 byte[] postdata = _encoding.GetBytes(data);
@@ -426,6 +443,7 @@ namespace System.Web
                 }
             }
         }
+
     }
 
 }

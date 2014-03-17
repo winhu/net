@@ -6,7 +6,7 @@ using System.Collections.Specialized;
 
 namespace WinStudio.Security
 {
-    public interface ISignProvider
+    public interface ISignProvider : IDisposable
     {
         /// <summary>
         /// 签名
@@ -66,7 +66,7 @@ namespace WinStudio.Security
         bool VerifySign(NameValueCollection nv, String sign, String salt);
     }
 
-    public interface ICryptProvider
+    public interface ICryptProvider : IDisposable
     {
         Encoding Encoding { get; }
 

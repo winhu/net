@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 
 namespace WinStudio.Security
 {
-    public class Sha1Provider : AbstractCryptProvider
+    public class Sha1Provider : BaseCryptProvider
     {
         public Sha1Provider(Encoding encoding)
             : base(encoding)

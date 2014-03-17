@@ -33,11 +33,12 @@ namespace System
         /// <param name="s">string</param>
         /// <param name="v">default value(DateTime.MinValue)</param>
         /// <returns></returns>
-        public static DateTime ToDateTime(this string s, DateTime v)
+        public static DateTime ToDateTime(this string s, DateTime v, string format = "yyyy-MM-dd HH:mm:ss")
         {
             if (s.HasValue())
             {
-                DateTime.TryParse(s, out v);
+                DateTime.TryParseExact(s, format, null, System.Globalization.DateTimeStyles.AssumeLocal, out v);
+                //DateTime.TryParse(s, out v);
             }
             return v;
         }
@@ -47,10 +48,10 @@ namespace System
         /// </summary>
         /// <param name="s">string</param>
         /// <returns></returns>
-        public static DateTime ToDateTime(this string s)
+        public static DateTime ToDateTime(this string s, string format = "yyyy-MM-dd HH:mm:ss")
         {
             DateTime v = DateTime.MinValue;
-            return s.ToDateTime(v);
+            return s.ToDateTime(v, format);
         }
 
         /// <summary>
@@ -199,6 +200,12 @@ namespace System
                 }
             }
             return nvc;
+        }
+
+        public static byte[] ToUTF8Bytes(this string s)
+        {
+            if (!s.HasValue()) return new byte[0];
+            return Encoding.UTF8.GetBytes(s);
         }
     }
 }

@@ -52,11 +52,11 @@ namespace WinStudio.Web.Controllers
             products.Add(prod);
             return "ok";
         }
-        public void Put(int id, [FromBody]Product prod)
+        public void Put(string id, Product prod)
         {
-            Product p = Get(id);
-            p.name = prod.name;
-            p.date = prod.date;
+            //Product p = Get(id);
+            //p.name = prod.name;
+            //p.date = prod.date;
 
         }
         public void Delete(int id)

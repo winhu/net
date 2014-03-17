@@ -18,7 +18,10 @@ namespace System
         public static string ToMD5(this string source)
         {
             if (string.IsNullOrEmpty(source)) return string.Empty;
-            return Signer.Create(AlgorithmName.md5).Sign(source);
+            using (ISignProvider signer = Signer.Create(AlgorithmName.md5))
+            {
+                return signer.Sign(source);
+            }
         }
         /// <summary>
         /// 将字符串转换为SH1值
@@ -28,7 +31,10 @@ namespace System
         public static string ToSHA1(this string source)
         {
             if (string.IsNullOrEmpty(source)) return string.Empty;
-            return Signer.Create(AlgorithmName.sha1).Sign(source);
+            using (ISignProvider signer = Signer.Create(AlgorithmName.sha1))
+            {
+                return signer.Sign(source);
+            }
         }
         /// <summary>
         /// 验证字符串是否为签名字符串
@@ -38,7 +44,10 @@ namespace System
         /// <returns></returns>
         public static bool IsEqualsMD5(this string source, string target)
         {
-            return Signer.Create(AlgorithmName.md5).VerifySign(source, target);
+            using (ISignProvider signer = Signer.Create(AlgorithmName.md5))
+            {
+                return signer.VerifySign(source, target);
+            }
         }
         /// <summary>
         /// 验证字符串是否为签名字符串
@@ -48,7 +57,10 @@ namespace System
         /// <returns></returns>
         public static bool IsEqualsSHA1(this string source, string target)
         {
-            return Signer.Create(AlgorithmName.sha1).VerifySign(source, target);
+            using (ISignProvider signer = Signer.Create(AlgorithmName.sha1))
+            {
+                return signer.VerifySign(source, target);
+            }
         }
         /// <summary>
         /// 验证键值集合是否为签名键值集合
@@ -58,7 +70,10 @@ namespace System
         /// <returns></returns>
         public static bool IsEqualsMD5(this NameValueCollection source, string target)
         {
-            return Signer.Create(AlgorithmName.md5).VerifySign(source, target);
+            using (ISignProvider signer = Signer.Create(AlgorithmName.sha1))
+            {
+                return signer.VerifySign(source, target);
+            }
         }
         /// <summary>
         /// 验证键值集合是否为签名键值集合
@@ -68,7 +83,10 @@ namespace System
         /// <returns></returns>
         public static bool IsEqualsSHA1(this NameValueCollection source, string target)
         {
-            return Signer.Create(AlgorithmName.sha1).VerifySign(source, target);
+            using (ISignProvider signer = Signer.Create(AlgorithmName.sha1))
+            {
+                return signer.VerifySign(source, target);
+            }
         }
 
         /// <summary>

@@ -39,8 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractCryptProvider.cs" />
-    <Compile Include="AbstractSignProvider.cs" />
+    <Compile Include="BaseCryptProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseSignProvider.cs" />
+    <Compile Include="CertificationSigner.cs" />
     <Compile Include="Crypter.cs" />
     <Compile Include="ISignProvider.cs" />
     <Compile Include="Md5Provider.cs" />

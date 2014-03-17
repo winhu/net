@@ -15,7 +15,7 @@ namespace WinStudio.Security
         /// <returns></returns>
         public static ISignProvider Create(ICryptProvider provider)
         {
-            return new AbstractSignProvider(provider);
+            return new BaseSignProvider(provider);
         }
         /// <summary>
         /// 创建签名器（默认字符集UTF8）
@@ -37,11 +37,11 @@ namespace WinStudio.Security
             switch (san)
             {
                 case AlgorithmName.md5:
-                    return new AbstractSignProvider(new Md5Provider(encoding));
+                    return new BaseSignProvider(new Md5Provider(encoding));
                 case AlgorithmName.sha1:
-                    return new AbstractSignProvider(new Sha1Provider(encoding));
+                    return new BaseSignProvider(new Sha1Provider(encoding));
                 default:
-                    return new AbstractSignProvider(new Md5Provider(encoding));
+                    return new BaseSignProvider(new Md5Provider(encoding));
             }
         }
     }
