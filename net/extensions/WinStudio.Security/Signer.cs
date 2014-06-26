@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinStudio.Security
+namespace System.Security
 {
     public class Signer
     {

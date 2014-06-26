@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WinStudio.FileExtensions</RootNamespace>
-    <AssemblyName>WinStudio.FileExtensions</AssemblyName>
+    <AssemblyName>Common.FileExtensions</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

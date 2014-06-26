@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WinStudio.EnumExtensions</RootNamespace>
-    <AssemblyName>WinStudio.EnumExtensions</AssemblyName>
+    <AssemblyName>Common.EnumExtensions</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

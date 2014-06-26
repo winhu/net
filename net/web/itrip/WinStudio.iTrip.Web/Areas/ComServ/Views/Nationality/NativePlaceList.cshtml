@@ -1,0 +1,15 @@
+﻿@model List<WinStudio.iTrip.Models.NativePlace>
+
+@{
+    Layout = null;
+}
+@if (Model != null)
+{
+    <div class="btn-group" flag="NativePlaceList">
+        @foreach (var native in Model)
+        { 
+            <button class="btn" code="@native.Code">@native.Name</button>    
+        }
+        }
+    </div>
+}

@@ -16,14 +16,14 @@ namespace System.Collections.Generic
         /// <returns></returns>
         public static bool HasValue<T>(this IEnumerable<T> arr)
         {
-            if (arr == null) return false;
-            if (arr is Array)
-            {
-                return (arr as Array).Length > 0;
-            }
-            else if (arr is List<T>)
-            { return (arr as List<T>).Count > 0; }
-            return false;
+            return arr != null && arr.Count() > 0;
+            //if (arr is Array)
+            //{
+            //    return (arr as Array).Length > 0;
+            //}
+            //else if (arr is List<T>)
+            //{ return (arr as List<T>).Count > 0; }
+            //return false;
         }
     }
 }

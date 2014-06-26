@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Security.Cryptography;
 
-namespace WinStudio.Security
+namespace System.Security
 {
     public class Sha1Provider : BaseCryptProvider
     {

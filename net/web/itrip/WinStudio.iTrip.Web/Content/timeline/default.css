@@ -1,0 +1,164 @@
+﻿
+@import "http://fonts.googleapis.com/css?family=Lato:300,400,700";
+@font-face {
+    font-family: "bpicons";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/bpicons/bpicons.eot?#iefix") format("embedded-opentype"), url("../fonts/bpicons/bpicons.woff") format("woff"), url("../fonts/bpicons/bpicons.ttf") format("truetype"), url("../fonts/bpicons/bpicons.svg#bpicons") format("svg");
+}
+*, *:after, *:before {
+    -moz-box-sizing: border-box;
+}
+body, html {
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+}
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+body {
+    color: #47A3DA;
+    font-family: 'Lato',Calibri,Arial,sans-serif;
+}
+a {
+    color: #F0F0F0;
+    text-decoration: none;
+}
+a:hover {
+    color: #000000;
+}
+.main, .container > header {
+    margin: 0 auto;
+    max-width: 69em;
+    padding: 0 1.875em 3.125em;
+    width: 90%;
+}
+.container > header {
+    padding: 2.875em 1.875em 1.875em;
+}
+.container > header h1 {
+    float: left;
+    font-size: 2.125em;
+    font-weight: 400;
+    line-height: 1.3;
+    margin: 0 0 0.6em;
+}
+.container > header > span {
+    display: block;
+    font-weight: 700;
+    letter-spacing: 0.5em;
+    padding: 0 0 0.6em 0.1em;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 9999;
+}
+.container > header > span span:after {
+    font-size: 75%;
+    height: 30px;
+    left: -12px;
+    position: relative;
+    top: -8px;
+    width: 30px;
+}
+.container > header > span span:hover:before {
+    background: none repeat scroll 0 0 #47A3DA;
+    color: #FFFFFF;
+    content: attr(data-content);
+    font-size: 110%;
+    font-weight: 300;
+    left: auto;
+    letter-spacing: 0;
+    line-height: 1.2;
+    margin-left: 4px;
+    padding: 0.8em 1em;
+    position: absolute;
+    text-align: left;
+    text-indent: 0;
+    text-transform: none;
+}
+.container > header nav {
+    float: right;
+    text-align: center;
+}
+.container > header nav a {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 4px solid #47A3DA;
+    border-radius: 50%;
+    display: inline-block;
+    height: 2.5em;
+    margin: 0 0.1em;
+    position: relative;
+    text-align: left;
+    width: 2.5em;
+}
+.container > header nav a > span {
+    display: none;
+}
+.container > header nav a:hover:before {
+    color: #47A3DA;
+    content: attr(data-info);
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 120%;
+    width: 600%;
+}
+.container > header nav a:hover {
+    background: none repeat scroll 0 0 #47A3DA;
+}
+.bp-icon:after {
+    color: #47A3DA;
+    font-family: 'bpicons';
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    text-align: center;
+    text-transform: none;
+}
+.container > header nav .bp-icon:after {
+    height: 100%;
+    left: 0;
+    line-height: 2;
+    position: absolute;
+    text-indent: 0;
+    top: 0;
+    width: 100%;
+}
+.container > header nav a:hover:after {
+    color: #FFFFFF;
+}
+.bp-icon-next:after {
+    content: "";
+}
+.bp-icon-drop:after {
+    content: "";
+}
+.bp-icon-archive:after {
+    content: "";
+}
+.bp-icon-about:after {
+    content: "";
+}
+.bp-icon-prev:after {
+    content: "";
+}
+@media screen and (max-width: 55em) {
+.container > header h1, .container > header nav {
+    float: none;
+}
+.container > header > span, .container > header h1 {
+    text-align: center;
+}
+.container > header nav {
+    margin: 0 auto;
+}
+.container > header > span {
+    text-indent: 30px;
+}
+}

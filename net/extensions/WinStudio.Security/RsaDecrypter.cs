@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 using System.IO;
 using System.Reflection;
 
-namespace WinStudio.Security
+namespace System.Security
 {
     public class RsaDecrypter
     {

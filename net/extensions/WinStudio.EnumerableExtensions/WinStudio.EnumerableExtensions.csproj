@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WinStudio.EnumerableExtensions</RootNamespace>
-    <AssemblyName>WinStudio.EnumerableExtensions</AssemblyName>
+    <AssemblyName>Common.EnumerableExtensions</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

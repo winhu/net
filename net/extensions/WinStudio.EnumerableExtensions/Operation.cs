@@ -33,6 +33,8 @@ namespace System.Collections.Generic
         /// <returns></returns>
         public static bool Has<T>(this T[] arr, T t)
         {
+            if (!arr.HasValue())
+                return false;
             return arr.Contains(t);
         }
 

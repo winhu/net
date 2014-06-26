@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WinStudio.HttpExtensions</RootNamespace>
-    <AssemblyName>WinStudio.HttpExtensions</AssemblyName>
+    <AssemblyName>Common.HttpExtensions</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

@@ -444,6 +444,17 @@ namespace System.Web
             }
         }
 
+        public void run()
+        {
+            NameValueCollection nvc = new NameValueCollection();
+            nvc.Add("iTripClientVersion", "1.0.0.1");
+            nvc.Add("iTripClientTicket", "abcdefg");
+            nvc.Add("iTripClientAccount", "hyfhyf");
+            nvc.Add("iTripClientDeviceSN", "123abc");
+            nvc.Add("iTripClientDeviceType", "1");
+            string ret = SendRequest("http://localhost:9000/Account/CheckTicket", null, nvc, null);
+            Console.WriteLine(ret);
+        }
     }
 
 }
